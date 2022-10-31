@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: teal;
+        }
+    </style>
+</head>
+<body>
+    <h1>키보드 방향키로 박스 움직이기</h1>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector(".box");
+        let posX = 0;
+        let posY = 0;
+
+        document.addEventListener('keydown', function(e) {
+            if(e.key === "ArrowLeft"){
+                posX -= 20;
+                box.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
+            }else if(e.key === "ArrowRight") {
+                posX += 20;
+                box.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
+            }else if(e.key === "ArrowUp") {
+                posY -= 20;
+                box.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
+            }else if(e.key == "ArrowDown"){
+                posY += 20;
+                box.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
+            }
+        })
+    </script>
+</body>
+</html>
